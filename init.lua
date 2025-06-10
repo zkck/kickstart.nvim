@@ -603,12 +603,8 @@ require('lazy').setup({
       --
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
-      })
-      for _, server_name in ipairs(ensure_installed) do
-            require('lspconfig')[server_name].setup(servers[server_name] or {})
+      for server_name, config in pairs(servers) do
+            require('lspconfig')[server_name].setup(config)
       end
     end,
   },
