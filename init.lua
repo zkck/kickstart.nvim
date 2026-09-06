@@ -990,6 +990,7 @@ do
   -- require 'custom.plugins.colorscheme'
   -- require 'custom.plugins.ui'
   -- require 'custom.plugins.git'
+  require 'custom.plugins.treesitter_context'
 end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
